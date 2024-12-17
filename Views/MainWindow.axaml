@@ -1,0 +1,92 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:CharacterParser.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="330" d:DesignHeight="220"
+        x:Class="CharacterParser.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+		CanResize="False"
+        Title="Character Parser" Width="330" 
+		Height="220" Background="#303030">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+	
+    <Grid
+		ColumnDefinitions="30, 87, 96, 87, 30"
+		RowDefinitions="40, 54, 59, 27, 40"
+	>
+		<StackPanel 
+			Orientation="Horizontal"
+			Grid.Column="1"
+			Grid.Row="1"
+			Grid.ColumnSpan="3"
+			Width="270"
+			Height="54"
+			Background="#242424"
+		>
+			<TextBox
+				x:Name="Symbol"
+				Width="78"
+				Height="37"
+				Margin="9 0 0 0"
+				Padding="0"
+				Text="Symbol"
+				TextAlignment="Center"
+				VerticalContentAlignment="Center"
+			>
+			</TextBox>
+			
+			<TextBox
+				x:Name="Unicode"
+				Width="78"
+				Height="37"
+				Margin="9 0 0 0"
+				Padding="0"
+				Text="Unicode"
+				TextAlignment="Center"
+				VerticalContentAlignment="Center"
+			>
+			</TextBox>
+			
+			<TextBox
+				x:Name="Hexcode"
+				Width="78"
+				Height="37"
+				Margin="9 0 0 0"
+				Padding="0"
+				Text="Hexcode"
+				TextAlignment="Center"
+				VerticalContentAlignment="Center"
+			></TextBox>
+		</StackPanel>
+		
+		<TextBox
+			Grid.Column="2"
+			Grid.Row="2"
+			x:Name="Input"
+			Width="78"
+			Height="37"
+			Padding="0"
+			Text="Input"
+			TextAlignment="Center"
+			VerticalContentAlignment="Center"
+		></TextBox>
+	
+		<Button
+			Grid.Column="2"
+			Grid.Row="3"
+			Width="95"
+			Height="27"
+			HorizontalContentAlignment="Center"
+		>
+			Convert
+		</Button>
+	</Grid>
+
+</Window>
