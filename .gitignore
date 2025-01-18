@@ -3,3 +3,7 @@ obj
 
 # Ignore bin folder
 bin
+
+# Ignore massive Unicode data
+Assets/Symbols/data
+Assets/Symbols/loc
